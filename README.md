@@ -50,35 +50,71 @@ You can access the GraphQL API and the Graph*i*QL interface at http://localhost:
 query {
   getIpInfo(ip: "8.8.8.8") {
     ip
-    city
-    region_name
-    region_code
+    type
+    continent_code
+    continent_name
     country_code
     country_name
+    region_code
+    region_name
+    city
+    zip
     latitude
     longitude
-    timezone
+    location {
+      geoname_id
+      capital
+      languages {
+        code
+        name
+        native
+      }
+      country_flag
+      country_flag_emoji
+      country_flag_emoji_unicode
+      calling_code
+      is_eu
+    }
     region_plus_code
   }
 }
+
 ```
 
 - Query information for multiple IPs:
 ```
 query {
-  getIpListInfo(ips: "8.8.8.8,8.8.4.4") {
+  getIpListInfo(ips: "8.8.8.8,9.9.9.9") {
     ip
-    city
-    region_name
-    region_code
+    type
+    continent_code
+    continent_name
     country_code
     country_name
+    region_code
+    region_name
+    city
+    zip
     latitude
     longitude
-    timezone
+    location {
+      geoname_id
+      capital
+      languages {
+        code
+        name
+        native
+      }
+      country_flag
+      country_flag_emoji
+      country_flag_emoji_unicode
+      calling_code
+      is_eu
+    }
     region_plus_code
   }
 }
+
 
 ```
 
